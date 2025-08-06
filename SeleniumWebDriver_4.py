@@ -90,7 +90,7 @@ except:
 
 
 try:
-    driver.save_screenshot(f"X:/all/qa/screenshots/gecid_home{stamp}.png")
+    driver.save_screenshot(f"gecid_home_{stamp}.png")
     print("✅ Скриншот сохранён 'Main page' -> gecid_home.png")
 except:
     print("❌ ")
@@ -146,6 +146,7 @@ except:
 
 try:
     driver.save_screenshot(f"X:/all/qa/screenshots/Search_CPU{stamp}.png")
-    print("✅ Скриншот сохранён 'Search' -> Search_CPU.png")
+    driver.save_screenshot(f"Search_CPU_{stamp}.png")
 except:
+
     print("❌ ")
