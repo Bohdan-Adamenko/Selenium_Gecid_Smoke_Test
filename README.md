@@ -1,37 +1,32 @@
-# Тестовый проект: Smoke-тест для сайта Gecid.com на Selenium WebDriver
+# Test Project: Smoke Test for Gecid.com with Selenium WebDriver
 
-Это учебный проект, демонстрирующий навыки автоматизации тестирования с использованием Python и Selenium WebDriver.
+This educational project demonstrates UI test automation skills using Python and Selenium WebDriver.
 
+## 🚀 What Does This Test Do?
 
-## 🚀 Что делает этот тест?
+The script performs a basic smoke test for the `ru.gecid.com` website:
+1.  Opens the main page.
+2.  Asserts the page `title`.
+3.  Verifies the presence of key elements in the header (e.g., News, Reviews, Videos, Search).
+4.  Verifies the presence of key elements in the footer.
+5.  Executes a search for the keyword "CPU".
+6.  Asserts the `title` and URL of the search results page.
+7.  Saves screenshots of key steps for visual verification.
 
-Скрипт выполняет базовый smoke-тест для сайта `ru.gecid.com`:
-1.  Открывает главную страницу.
-2.  Проверяет `title` страницы.
-3.  Проверяет наличие ключевых элементов в шапке сайта (Новости, Обзоры, Видео, Поиск и т.д.).
-4.  Проверяет наличие ключевых элементов в футере сайта.
-5.  Выполняет тестовый поиск по слову "CPU".
-6.  Проверяет `title` и URL страницы результатов поиска.
-7.  Делает скриншоты ключевых этапов для визуального подтверждения.
+## 🛠️ How to Run
 
+### Prerequisites:
+*   **Python 3.x** installed.
+*   **Google Chrome** browser installed.
+*   **Selenium** library and the corresponding **ChromeDriver** installed.
 
-## 🛠️ Как запустить?
-
-
-### Пререквизиты:
-*   Установленный **Python 3.x**.
-*   Установленный браузер **Google Chrome**.
-*   Установленный **Selenium** и **Chrome WebDriver**.
-
-
-### Установка зависимостей:
+### Installation:
 
 pip install selenium
 
-*Примечание: убедитесь, что версия Chrome WebDriver соответствует версии вашего браузера Google Chrome.*
+*Note: Please ensure your ChromeDriver version matches your installed Google Chrome browser version.*
 
-
-### Запуск теста:
-Для запуска теста выполните в командной строке:
+### Running the Test:
+To run the test, execute the following command from your terminal:
 
 python SeleniumWebDriver_4.py
