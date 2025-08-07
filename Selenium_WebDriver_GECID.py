@@ -33,14 +33,14 @@ def find_element(driver, by, value, element_name,):
 def assert_title(driver, title):
     try:
         assert title in driver.title
-        print('✅ Initial "Title" matches')
+        print('✅ Verification PASSED: Initial "Title" matches')
     except:
-        print('❌ Initial "Title" does not match')
+        print('❌ Verification FAILED: "Title" does not match')
 
 def handle_click(driver, a, text):
     try:
         driver.find_element(By.CSS_SELECTOR, a).click()
-        print(f'✅ Button "{text}" is clicked')
+        print(f'✅ Assertion PASSED: Button "{text}" is clicked')
     except Exception as e:
         handle_critical_failure(driver, f'Button "{text}" is clicked', e)
 
@@ -53,7 +53,7 @@ def run_test(driver):
 
     try:
         driver.get("https://ru.gecid.com/")
-        print('✅ Navigated to "gecid.com" homepage')
+        print('✅ Assertion PASSED: Navigated to "gecid.com" homepage')
     except Exception as e:
         handle_critical_failure(driver, 'Navigated to "gecid.com" homepage', e)
 
@@ -84,7 +84,7 @@ def run_test(driver):
 
     try:
         driver.find_element(By.NAME, "s").send_keys("CPU")
-        print('✅ Text "CPU" is written in the "Search" text field')
+        print('✅ Assertion PASSED: Text "CPU" is written in the "Search" text field')
     except Exception as e:
         handle_critical_failure(driver, 'Text "CPU" is written in the "Search" text field', e)
 
@@ -94,7 +94,7 @@ def run_test(driver):
 
     try:
         driver.find_element(By.CSS_SELECTOR, 'button[aria-label="Соглашаюсь"]').click()
-        print('✅ Cookie consent accepted.')
+        print('✅ Verification PASSED: Cookie consent accepted.')
     except:
         print('ℹ️ Cookie consent pop-up not found, continuing...')
 
@@ -107,9 +107,9 @@ def run_test(driver):
 
     try:
         assert "https://ru.gecid.com/search.php?s=CPU" in driver.current_url
-        print('✅ "URL" matches')
+        print('✅ Verification PASSED: "URL" matches')
     except:
-        print('❌ "URL" does not match')
+        print('❌ Verification FAILED: "URL" does not match')
 
     find_element(driver, By.CSS_SELECTOR, 'button[class="gsc-search-button gsc-search-button-v2"]', "Body Element: Google Search")
 
