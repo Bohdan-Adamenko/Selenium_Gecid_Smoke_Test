@@ -1,32 +1,38 @@
-# Test Project: Smoke Test for Gecid.com with Selenium WebDriver
+# Test Project: Robust Smoke Test for Gecid.com with Selenium WebDriver
 
-This educational project demonstrates UI test automation skills using Python and Selenium WebDriver.
+This educational project demonstrates how to build a structured and reliable UI test automation script using Python and Selenium WebDriver.
 
 ## 🚀 What Does This Test Do?
 
-The script performs a basic smoke test for the `ru.gecid.com` website:
-1.  Opens the main page.
-2.  Asserts the page `title`.
-3.  Verifies the presence of key elements in the header (e.g., News, Reviews, Videos, Search).
-4.  Verifies the presence of key elements in the footer.
-5.  Executes a search for the keyword "CPU".
-6.  Asserts the `title` and URL of the search results page.
-7.  Saves screenshots of key steps for visual verification.
+The script performs a robust smoke test for the `ru.gecid.com` website, incorporating a **"fail fast"** strategy and reusable helper functions.
+
+### Test Logic & Flow:
+1.  **Modular Design:** The code is organized into helper functions for actions like taking screenshots, handling failures, and verifying elements, promoting clean and reusable code (D.R.Y. principle).
+2.  **Critical Steps:** Core actions like site navigation, search execution, and result verification are treated as critical. A failure in any of these steps will **immediately terminate** the test via `sys.exit(1)` to provide a clear and immediate failure report.
+3.  **Non-Critical Verifications:** Simple checks for the presence of various UI elements on the homepage are designed to log their status (found/not found) without stopping the test execution.
+4.  **Execution Management:** The entire test is managed by a `main()` function that handles driver initialization, execution, final reporting (PASS/FAIL), and teardown.
+
+### Key Actions Performed:
+*   Navigates to the homepage and verifies its title.
+*   Performs non-critical checks for header and footer elements.
+*   Executes a search for the keyword "CPU".
+*   Verifies the title and URL of the search results page.
+*   Saves screenshots for key stages and upon critical failure.
 
 ## 🛠️ How to Run
 
 ### Prerequisites:
 *   **Python 3.x** installed.
 *   **Google Chrome** browser installed.
-*   **Selenium** library and the corresponding **ChromeDriver** installed.
+*   **Selenium** library and a matching **ChromeDriver** for your browser version.
 
 ### Installation:
-
+```
 pip install selenium
-
-*Note: Please ensure your ChromeDriver version matches your installed Google Chrome browser version.*
+```
 
 ### Running the Test:
-To run the test, execute the following command from your terminal:
-
-python SeleniumWebDriver_4.py
+Execute the following command from your terminal:
+```
+python Selenium_WebDriver_GECID.py
+```
