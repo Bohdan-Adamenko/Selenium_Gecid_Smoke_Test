@@ -33,5 +33,5 @@ pip install selenium
 ### Running the Test:
 Execute the following command from your terminal:
 ```
-
+Selenium_WebDriver_GECID.py
 ```
